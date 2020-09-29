@@ -3,27 +3,27 @@
 ## UI:
 
 Login Screen:  
-[X] Title  
-[X] Email/Password Inputtable Box  
-[X] Login Button  
-[X] SignUp Button  
-[]  Forgot Password Button  
-[X] SignUp Button -> SignUp Screen  
-[X] Login Button -> LoginPafe(LoginPage not yet made - this just directs you to another page)  
+**[X]** Title  
+**[X]** Email/Password Inputtable Box  
+**[X]** Login Button  
+**[X]** SignUp Button  
+**[]** Forgot Password Button  
+**[X]** SignUp Button -> SignUp Screen  
+**[X]** Login Button -> LoginPafe(LoginPage not yet made - this just directs you to another page)  
   
 SignUp Screen:  
-[] Full Name Box  
-[] UserName Box  
-[] Email Box  
-[] Password Box  
-[] SignUp Button  
-[] SignUp Button -> FirstTimeUser Screen  
+**[]** Full Name Box  
+**[]** UserName Box  
+**[]** Email Box  
+**[]** Password Box  
+**[]** SignUp Button  
+**[]** SignUp Button -> FirstTimeUser Screen  
   
 FirstTimeUser Screen:  
-[] Title Header  
-[] ColorShade Boxes  
-[] Know Your Foundation? Enter Here Button  
-[] Know Your Foundation? Enter Here Button -> KnowYourFoundation Screen  
+**[]** Title Header  
+**[]** ColorShade Boxes  
+**[]** Know Your Foundation? Enter Here Button  
+**[]** Know Your Foundation? Enter Here Button -> KnowYourFoundation Screen  
 
 ## Backend:
 
