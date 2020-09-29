@@ -2,7 +2,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 // navigation
-import TabNavigation from './TabNavigation';
+import StackLogin from './StackLogin';
 
 // screens
 import ModalMusicPlayer from '../screens/ModalMusicPlayer';
@@ -12,7 +12,7 @@ const StackNavigator = createStackNavigator(
   {
     // Main Tab Navigation
     // /////////////////////////////////////////////////////////////////////////
-    TabNavigation,
+    StackLogin,
 
     // Modals
     // /////////////////////////////////////////////////////////////////////////
@@ -26,7 +26,7 @@ const StackNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
-    initialRouteName: 'TabNavigation',
+    initialRouteName: 'StackLogin',
     mode: 'modal'
   }
 );
