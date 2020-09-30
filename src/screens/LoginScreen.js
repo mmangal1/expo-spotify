@@ -11,7 +11,7 @@ import Touch from '../components/Touch';
 class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {email: null}
+    this.state = {email: null, password: null}
   };
 
   render() {

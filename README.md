@@ -10,14 +10,16 @@ Login Screen:
 **[]** Forgot Password Button  
 **[X]** SignUp Button -> SignUp Screen  
 **[X]** Login Button -> LoginPafe(LoginPage not yet made - this just directs you to another page)  
+**[]** Email handler (save it in this.state)
+**[]** Password handler (save it in this.state)
   
 SignUp Screen:  
-**[]** Full Name Box  
-**[]** UserName Box  
-**[]** Email Box  
-**[]** Password Box  
-**[]** SignUp Button  
-**[]** SignUp Button -> FirstTimeUser Screen  
+**[X]** Full Name Box  
+**[X]** UserName Box  
+**[X]** Email Box  
+**[X]** Password Box  
+**[X]** SignUp Button  
+**[X]** SignUp Button -> FirstTimeUser Screen  
   
 FirstTimeUser Screen:  
 **[]** Title Header  

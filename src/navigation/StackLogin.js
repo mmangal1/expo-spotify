@@ -34,7 +34,18 @@ Icon.propTypes = {
 
 const StackSignupNavigator = createStackNavigator({
   SignUp: {
-    screen: SignUpScreen
+    screen: SignUpScreen,
+    navigationOptions : {
+      headerVisible: false, 
+      headerShown: false,
+    }
+  },
+  Login : {
+    screen: LoginScreen,
+    navigationOptions : {
+      headerVisible: false, 
+      headerShown: false,
+    }
   },
   Tab: {
     screen: TabNavigator
@@ -51,7 +62,11 @@ const LoginNavigator = createStackNavigator({
     }
   },
   StackSignup: {
-    screen: StackSignupNavigator
+    screen: StackSignupNavigator,
+    navigationOptions : {
+      headerVisible: false, 
+      headerShown: false,
+    }
   }
 });
 
