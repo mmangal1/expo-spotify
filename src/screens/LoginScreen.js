@@ -11,14 +11,21 @@ import Touch from '../components/Touch';
 class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {email: null, password: null}
+    this.state = {
+      email: null, 
+      password: null
+    }
   };
 
+  handleEmail = (text) => {
+    this.setState({ email: text })
+    console.log(this.state)
+  }
+  handlePassword = (text) => {
+    this.setState({ password: text })
+    console.log(this.state)
+  }
   render() {
-
-    handleEmail = (text) => {
-      this.setState({ email: text })
-    }
 
     return (
       <View style={styles.background} >
@@ -31,7 +38,7 @@ class LoginScreen extends React.Component {
             placeHolder
             keyboardType = "email-address"
             autoCapitalize = "none"
-            onChangeText = {this.handleEmail}
+            onChange = {this.handleEmail}
           />
           <TextInput style={styles.input}
             underlineColorAndroid = "transparent"
@@ -39,7 +46,7 @@ class LoginScreen extends React.Component {
             placeholderTextColor = "#A09090"
             keyboardType = "default"
             autoCapitalize = "none"
-            onChangeText = {this.handleEmail}
+            onChangeText = {this.handlePassword}
           />
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Tab')}

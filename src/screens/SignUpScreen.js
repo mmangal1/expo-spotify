@@ -12,6 +12,12 @@ import Touch from '../components/Touch';
 class SignUpScreen extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      fullName: null,
+      email: null,
+      username: null,
+      password: null
+    }
   };
 
   render() {
