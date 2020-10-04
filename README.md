@@ -9,10 +9,13 @@ Login Screen:
 **[X]** SignUp Button  
 **[]** Forgot Password Button  
 **[X]** SignUp Button -> SignUp Screen  
-**[X]** Login Button -> LoginPafe(LoginPage not yet made - this just directs you to another page)  
-**[]** Email handler (save it in this.state)
-**[]** Password handler (save it in this.state)
-  
+**[X]** Login Button -> LoginPage(LoginPage not yet made - this just directs you to another page)  
+**[X]** Email handler (save it in this.state)  
+**[X]** Password handler (save it in this.state)  
+**[X]** Login with Authentication  
+**[]** Screen needs to slide up when keyboard present  
+**[]** Persist Login Info so user doesn't need to sign in again  
+
 SignUp Screen:  
 **[X]** Full Name Box  
 **[X]** UserName Box  
@@ -20,6 +23,8 @@ SignUp Screen:
 **[X]** Password Box  
 **[X]** SignUp Button  
 **[X]** SignUp Button -> FirstTimeUser Screen  
+**[X]** SignUp with Authentication  
+**[]** Screen needs to slide up when keyboard present  
   
 FirstTimeUser Screen:  
 **[]** Title Header  
