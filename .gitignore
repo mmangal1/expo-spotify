@@ -80,3 +80,4 @@ web-build/
 
 # Config Files
 src/firebase/config.js
+GoogleService-Info.plist

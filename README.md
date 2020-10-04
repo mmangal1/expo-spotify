@@ -58,7 +58,8 @@ Run Project Locally: `yarn dev` or `yarn start`
 - Expo SDK 39
 - iOS, Android and PWA (Web App)
 - React Navigation v4
-- PropTypes
+- PropTypes  
+- Firebase
 
 ## Linting
 
