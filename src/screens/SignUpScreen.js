@@ -3,6 +3,7 @@ import { ScrollView, Text, View, StyleSheet, TextInput, TouchableOpacity } from 
 import PropTypes from 'prop-types';
 import { useTheme } from 'react-navigation';
 import { gStyle } from '../constants';
+import { firebase } from '../firebase/config';
 
 // components
 import NavigationBack from '../navigation/NavigationBack'
@@ -20,6 +21,48 @@ class SignUpScreen extends React.Component {
     }
   };
 
+  setFullName = (text) => {
+    this.setState({ fullName: text })
+  }
+  setEmail = (text) => {
+    this.setState({ email: text })
+  }
+  setUserName = (text) => {
+    this.setState({ username: text })
+  }
+  setPassword = (text) => {
+    this.setState({ password: text })
+  }
+
+  onRegisterPress = () => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then((response) => {
+          const uid = response.user.uid
+          const data = {
+              id: uid,
+              email: this.state.email,
+              fullName: this.state.fullName,
+              username: this.state.username,
+          };
+          const usersRef = firebase.firestore().collection('userRegistration')
+          usersRef
+              .doc(uid)
+              .set(data)
+              .then(() => {
+                  this.props.navigation.navigate('Tab', {user: data})
+              })
+              .catch((error) => {
+                  alert(error)
+              });
+      })
+      .catch((error) => {
+          alert(error)
+    });
+  }
+
+
   render() {
 
     return (
@@ -33,7 +76,7 @@ class SignUpScreen extends React.Component {
             placeHolder
             keyboardType = "default"
             autoCapitalize = "none"
-            onChangeText = {this.handleEmail}
+            onChangeText = {this.setFullName}
           />
           <TextInput style={styles.input}
             underlineColorAndroid = "transparent"
@@ -41,7 +84,7 @@ class SignUpScreen extends React.Component {
             placeholderTextColor = "#A09090"
             keyboardType = "email-address"
             autoCapitalize = "none"
-            onChangeText = {this.handleEmail}
+            onChangeText = {this.setEmail}
           />
           <TextInput style={styles.input}
             underlineColorAndroid = "transparent"
@@ -49,7 +92,7 @@ class SignUpScreen extends React.Component {
             placeholderTextColor = "#A09090"
             keyboardType = "default"
             autoCapitalize = "none"
-            onChangeText = {this.handleEmail}
+            onChangeText = {this.setUserName}
           />
           <TextInput style={styles.input}
             underlineColorAndroid = "transparent"
@@ -57,10 +100,10 @@ class SignUpScreen extends React.Component {
             placeholderTextColor = "#A09090"
             keyboardType = "default"
             autoCapitalize = "none"
-            onChangeText = {this.handleEmail}
+            onChangeText = {this.setPassword}
           />
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Tab')}
+            onPress={this.onRegisterPress}
             style = {styles.loginButton}
           >
             <Text style={styles.loginText}> Sign Up </Text>

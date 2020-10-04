@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ScrollView, Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useTheme } from 'react-navigation';
 import { gStyle } from '../constants';
-
+import { firebase } from '../firebase/config';
 // components
 import Touch from '../components/Touch';
 
@@ -17,14 +17,42 @@ class LoginScreen extends React.Component {
     }
   };
 
-  handleEmail = (text) => {
+  setEmail = (text) => {
     this.setState({ email: text })
-    console.log(this.state)
   }
-  handlePassword = (text) => {
+  setPassword = (text) => {
     this.setState({ password: text })
-    console.log(this.state)
   }
+
+  onLoginPress = () => {
+    console.log(this.state.email)
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then((response) => {
+          const uid = response.user.uid
+          const usersRef = firebase.firestore().collection('userRegistration')
+          usersRef
+              .doc(uid)
+              .get()
+              .then(firestoreDocument => {
+                  if (!firestoreDocument.exists) {
+                      alert("User does not exist anymore.")
+                      return;
+                  }
+                  const user = firestoreDocument.data()
+                  this.props.navigation.navigate('Tab', {user})
+              })
+              .catch(error => {
+                  alert(error)
+              });
+      })
+      .catch(error => {
+          alert(error)
+      });
+  }
+
+
   render() {
 
     return (
@@ -38,7 +66,7 @@ class LoginScreen extends React.Component {
             placeHolder
             keyboardType = "email-address"
             autoCapitalize = "none"
-            onChange = {this.handleEmail}
+            onChangeText = {this.setEmail}
           />
           <TextInput style={styles.input}
             underlineColorAndroid = "transparent"
@@ -46,10 +74,10 @@ class LoginScreen extends React.Component {
             placeholderTextColor = "#A09090"
             keyboardType = "default"
             autoCapitalize = "none"
-            onChangeText = {this.handlePassword}
+            onChangeText = {this.setPassword}
           />
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Tab')}
+            onPress={this.onLoginPress}
             style = {styles.loginButton}
           >
             <Text style={styles.loginText}> Login </Text>
