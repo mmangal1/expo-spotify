@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View, Button } from 'react-native';
 import { device, gStyle } from '../constants';
+import { firebase } from '../firebase/config';
 
 // components
 import LineItemCategory from '../components/LineItemCategory';
@@ -27,6 +28,11 @@ const Library = () => (
         />
       )}
     />
+
+  <Button
+      title="Sign out"
+      onPress={() => firebase.auth().signOut()} 
+  />
   </View>
 );
 

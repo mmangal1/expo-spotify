@@ -31,7 +31,7 @@ class LoginScreen extends React.Component {
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((response) => {
           const uid = response.user.uid
-          const usersRef = firebase.firestore().collection('userRegistration')
+          const usersRef = firebase.firestore().collection('registerUser')
           usersRef
               .doc(uid)
               .get()

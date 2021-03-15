@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { colors } from '../constants';
 
 // navigation stacks
-import StackHome from './StackHome';
+import StackQuestions from './StackQuestions';
 import StackSearch from './StackSearch';
 import StackLibrary from './StackLibrary';
 
@@ -12,18 +12,17 @@ import CustomTabBar from '../components/CustomTabBar';
 
 const BottomTabNavigator = createBottomTabNavigator(
   {
-    StackHome,
+    StackQuestions,
     StackSearch,
     StackLibrary
   },
   {
-    initialRouteName: 'StackHome',
-    tabBarComponent: props => <CustomTabBar {...props} />,
+    initialRouteName: 'StackQuestions',
     tabBarOptions: {
       activeTintColor: colors.white,
-      inactiveTintColor: colors.greyInactive,
+      inactiveTintColor: '#A09090',
       style: {
-        backgroundColor: colors.grey,
+        backgroundColor: '#EABFB9',
         borderTopWidth: 0
       }
     }

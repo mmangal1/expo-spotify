@@ -14,7 +14,9 @@ Login Screen:
 **[X]** Password handler (save it in this.state)  
 **[X]** Login with Authentication  
 **[]** Screen needs to slide up when keyboard present  
-**[]** Persist Login Info so user doesn't need to sign in again  
+**[X]** Persist Login Info so user doesn't need to sign in again  
+**[]** Logout Button  
+**[]** Hide Password while typing  
 
 SignUp Screen:  
 **[X]** Full Name Box  
@@ -25,12 +27,28 @@ SignUp Screen:
 **[X]** SignUp Button -> FirstTimeUser Screen  
 **[X]** SignUp with Authentication  
 **[]** Screen needs to slide up when keyboard present  
+**[]** Hide Password while typing  
   
-FirstTimeUser Screen:  
-**[]** Title Header  
-**[]** ColorShade Boxes  
-**[]** Know Your Foundation? Enter Here Button  
-**[]** Know Your Foundation? Enter Here Button -> KnowYourFoundation Screen  
+Home Screen:
+**[]** Search Bar on top
+**[]** Posts Scroll
+**[X]** Opens from the login screen
+
+Search:
+**[]** Find Posts
+
+Create Post Screen:
+**[]** Post Creation Popup
+
+Post:
+**[]** User attachment
+**[]** Comment Section
+**[]** Upvote
+
+
+
+Settings Screen:
+**[]** Logout Button
 
 ## Backend:
 

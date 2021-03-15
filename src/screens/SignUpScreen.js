@@ -46,7 +46,7 @@ class SignUpScreen extends React.Component {
               fullName: this.state.fullName,
               username: this.state.username,
           };
-          const usersRef = firebase.firestore().collection('userRegistration')
+          const usersRef = firebase.firestore().collection('registerUser')
           usersRef
               .doc(uid)
               .set(data)
